@@ -1,0 +1,14 @@
+- name: create jenkins job
+  hosts: localhost
+  become: yes 
+  roles: 
+    - jenkins-jobs
+  vars: 
+    jobs: 
+      - {jobName: 'test-1', jobDescription: 'Test Job 1' , repo_name: 'learn-jenkins'}
+      - {jobName: 'roboshop-catalogue', jobDescription: 'catalogue microservice' , repo_name: 'ecomm-catalogue'}
+      - {jobName: 'roboshop-user', jobDescription: 'user microservice' , repo_name: 'ecomm-user'}
+      - {jobName: 'roboshop-cart', jobDescription: 'cart microservice' , repo_name: 'ecomm-cart'}
+      - {jobName: 'roboshop-payment', jobDescription: 'payment microservice' , repo_name: 'ecomm-payment'}
+      - {jobName: 'roboshop-shipping', jobDescription: 'shipping microservice' , repo_name: 'ecomm-shipping'}
+      - {jobName: 'roboshop-frontend', jobDescription: 'frontend microservice' , repo_name: 'ecomm-frontend'}
